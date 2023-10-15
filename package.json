@@ -1,0 +1,31 @@
+{
+  "name": "mikro-orm-bug-embedded-alias",
+  "scripts": {
+    "env": "env-cmd --recursive --silent --fallback -f .env",
+    "start": "yarn env ts-node index.ts",
+    "db": "yarn env mikro-orm",
+    "db:migrate": "yarn db migration:up",
+    "db:migrate:down": "yarn db migration:down",
+    "db:create": "yarn db migration:create",
+    "db:reset": "yarn db migration:fresh"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "5.8.8",
+    "@mikro-orm/migrations": "5.8.8",
+    "@mikro-orm/postgresql": "5.8.8",
+    "tslib": "^2.4.1"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "5.8.8",
+    "@types/node": "^20.8.6",
+    "env-cmd-enhanced": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./mikro-orm.config.ts"
+    ]
+  }
+}
